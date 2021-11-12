@@ -1,4 +1,27 @@
-.App {
+
+.app {
+  background-color: rgb(240, 240, 240); 
+  height: 100vh; 
+  display: grid; 
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.menu {
+  /* padding: 20px;  */
+  border-radius: 8px;
+  background-color: white;
+  display: flex; 
+  flex-direction: column;
+  height: fit-content;
+  margin: 20px; 
+}
+
+
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +58,6 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
+
+

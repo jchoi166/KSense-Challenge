@@ -1,6 +1,8 @@
+import classes from "./UserTab.module.css"
+
 const UserTab = (props) => {
    return (
-      <div onClick={props.onClick}>
+      <div className={classes.userTab} onClick={props.onClick}>
          {props.username}
       </div>
    )

@@ -1,21 +1,16 @@
-import UserTab from "./UserTab"
+import classes from "./UserMenu.module.css"
 
+import UserTab from "../users/UserTab"
 
 const User = (props) => {
 
    const getUserPosts = (user) => {
       props.getPosts(user)
-      // console.log(user)
-      // console.log('hello there')
-   }
-   
-   const test = () => {
-      console.log('hello there')
-      
    }
 
    return (
-      <div>
+      <div className={`menu ${classes.userMenu}`}>
+         <h3>Select a user to see their posts!</h3>
          {props.users.map(user => {
             return <UserTab username={user.name} key={user.id} onClick={getUserPosts.bind(user, user.id)}/>
          })}

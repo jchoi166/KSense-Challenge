@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
 import './App.css';
 
-import PostMenu from './components/PostMenu';
-import UserMenu from './components/UserMenu';
+import PostMenu from './components/posts/PostMenu';
+import UserMenu from './components/users/UserMenu';
 
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
     try {
       const response = await fetch('https://jsonplaceholder.typicode.com/users')
       const data = await response.json()
-      console.log(data)
+      // console.log(data)
       setUserList(data)
     } 
     
@@ -28,6 +28,7 @@ function App() {
       const response = await fetch(`https://jsonplaceholder.typicode.com/posts?userId=${user}`)
       const data = await response.json()
       console.log(data)
+      setPostList(data)
     }
     catch(err) {
       console.log(err)
@@ -40,9 +41,10 @@ function App() {
 
   
   return (
-    <div>
+    <div className="app">
       <UserMenu users={userList} getPosts={getPosts}/>
-      <PostMenu />
+      {/* {postList ?? } */}
+      <PostMenu posts={postList}/>
     </div>
   );
 }
